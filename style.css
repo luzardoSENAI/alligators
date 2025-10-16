@@ -1,0 +1,382 @@
+/* Configurações Globais e Variáveis de Cor */
+:root {
+    --cor-fundo: #121212;
+    --cor-texto: #E0E0E0;
+    --cor-verde: #2E8B57; /* Verde SESI/SENAI */
+    --cor-verde-brilhante: #39FF14; /* Verde Neon para destaque */
+    --cor-amarelo: #FFD700;
+    --cor-preto-secundario: #1E1E1E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Efeito Matrix no Fundo */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15;
+}
+
+
+/* Header */
+header {
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--cor-verde);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 2rem;
+}
+
+header nav ul li a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--cor-amarelo);
+}
+
+/* Seção Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--cor-verde), var(--cor-amarelo));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.hero-text .subtitle {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    animation: slideInFromLeft 1s ease-out 0.2s backwards;
+}
+
+.hero-text .highlight {
+    color: var(--cor-verde);
+    font-weight: 700;
+}
+
+.hero-text .typing-effect {
+    font-size: 1.2rem;
+    border-right: 2px solid var(--cor-amarelo);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--cor-verde);
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideInFromLeft 1s ease-out 0.4s backwards;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(46, 139, 87, 0.4);
+}
+
+.hero-mascot img {
+    max-width: 400px;
+    animation: float 6s ease-in-out infinite;
+}
+
+
+/* Seções de Conteúdo */
+.content-section {
+    padding: 6rem 0;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--cor-verde);
+}
+
+/* Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: var(--cor-preto-secundario);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cor-amarelo);
+}
+
+.skill-card i {
+    font-size: 4rem;
+    color: var(--cor-verde);
+    margin-bottom: 1rem;
+}
+
+/* Projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--cor-preto-secundario);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+}
+
+.project-card h3 {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    color: var(--cor-amarelo);
+}
+
+.project-card p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--cor-verde);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ================================================== */
+/* Seção Equipe (ESTILO JOGO - 26 COLUNAS HORIZONTAIS) */
+/* ================================================== */
+
+/* Dica de rolagem no título */
+.scroll-hint {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #888;
+}
+
+/* O contêiner principal que terá a rolagem horizontal */
+/* O contêiner principal para CADA LINHA */
+.team-wall {
+    display: flex;         /* Continua usando flexbox para o alinhamento */
+    height: 300px;         /* Mantém a altura fixa */
+    gap: 10px;             /* Mantém o espaço entre as colunas */
+    padding: 10px 0;
+    margin-bottom: 15px;   /* NOVO: Adiciona um espaço entre a primeira e a segunda linha */
+    justify-content: center; /* NOVO: Centraliza as 13 colunas no container */
+}
+
+/* Estilizando a barra de rolagem para um visual mais "gamer" */
+.team-wall::-webkit-scrollbar {
+    height: 8px;
+}
+.team-wall::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 4px;
+}
+.team-wall::-webkit-scrollbar-thumb {
+    background: var(--cor-verde);
+    border-radius: 4px;
+}
+.team-wall::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-amarelo);
+}
+
+/* A coluna de cada aluno (ESTADO PADRÃO - FINA) */
+.team-block {
+    /* PASSO 4: Define a largura inicial (fina) e impede que encolha */
+    flex: 0 0 60px; 
+    
+    border-radius: 8px;
+    border: 2px solid #555;
+    cursor: pointer;
+    overflow: hidden; /* Esconde o que vazar da coluna */
+    
+    /* Posição e Fundo */
+    position: relative;
+    background-image: var(--bg-image); /* Usa a imagem do HTML como fundo */
+    background-size: cover;
+    background-position: center;
+    
+    /* Transição suave para a expansão */
+    transition: flex 0.4s cubic-bezier(0.05, 0.61, 0.41, 0.95), filter 0.3s ease;
+}
+
+/* EFEITO DE HOVER: Ofusca todas as colunas... */
+.team-wall:hover .team-block {
+    filter: brightness(0.5) saturate(0);
+}
+
+/* ...EXCETO a coluna selecionada */
+.team-wall .team-block:hover {
+    /* PASSO 5: Expande a coluna ao passar o mouse */
+    flex-basis: 280px;
+    
+    filter: brightness(1) saturate(1); /* Traz a cor e o brilho de volta */
+    border-color: var(--cor-amarelo);
+}
+
+/* As informações do aluno dentro da coluna */
+.team-block .team-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 1rem;
+    
+    /* Fundo gradiente para garantir a legibilidade do texto sobre a foto */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0));
+    
+    /* Esconde as informações por padrão */
+    opacity: 0;
+    transform: translateY(20px);
+    
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Revela as informações na coluna selecionada */
+.team-wall .team-block:hover .team-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.team-block .team-info h4 {
+    margin: 0;
+    color: var(--cor-amarelo);
+    font-size: 1.2rem;
+}
+
+.team-block .team-info p {
+    margin: 5px 0 0 0;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #333;
+}
+
+
+/* Animações Keyframes */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--cor-amarelo); }
+}
