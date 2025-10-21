@@ -206,29 +206,32 @@ header nav ul li a:hover {
     margin: 0 auto;  /* Centraliza o bloco de parágrafo no container */
 }
 
-/* Reduz o espaço acima da seção de projetos */
-#projetos {
-    padding-top: 1rem;
-}
-
 /* Projetos */
 .projects-grid {
-    display: grid;
-    /* Layout responsivo: os cards se ajustam à largura da tela */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     display: flex; /* Usa flexbox para alinhar os itens */
-    justify-content: center; /* Centraliza os projetos no container */
+    flex-wrap: nowrap; /* Garante que os itens fiquem em uma única linha */
+    overflow-x: auto; /* Habilita a rolagem horizontal se os itens não couberem */
     gap: 2rem;
-    justify-content: center; /* Centraliza os itens no grid */
+    justify-content: center; /* Centraliza os itens no container */
+    padding-bottom: 1.5rem; /* Adiciona espaço para a barra de rolagem */
 }
 
+/* Estilizando a barra de rolagem da seção de projetos */
+.projects-grid::-webkit-scrollbar { height: 8px; }
+.projects-grid::-webkit-scrollbar-track { background: #222; border-radius: 4px; }
+.projects-grid::-webkit-scrollbar-thumb { background: var(--cor-verde); border-radius: 4px; }
+.projects-grid::-webkit-scrollbar-thumb:hover { background: var(--cor-amarelo); }
+
 .project-card {
+    flex: 0 0 400px; /* Define uma largura fixa para cada card de projeto */
+    /* Isso garante que dois cards fiquem lado a lado e permite rolagem se a tela for menor */
     background: var(--cor-preto-secundario);
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #333;
     transition: transform 0.3s ease;
 }
+
 
 .project-card:hover {
     transform: scale(1.05);
