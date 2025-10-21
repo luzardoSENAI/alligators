@@ -173,10 +173,8 @@ header nav ul li a:hover {
 .skills-grid {
     display: flex;
     overflow-x: auto;
-    padding-bottom: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 0.5rem 0 1.5rem 0;
     gap: 2rem;
-    justify-content: center; /* Centraliza os itens no grid */
 }
 
 .skill-card {
@@ -402,4 +400,78 @@ footer {
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--cor-amarelo); }
+}
+
+/* ================================================== */
+/*               MEDIA QUERIES (MOBILE)               */
+/* ================================================== */
+
+@media (max-width: 768px) {
+    /* Ajustes gerais para mobile */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Header - Esconde a navegação e prepara para um futuro menu hamburguer */
+    header nav ul {
+        /* Por enquanto, vamos apenas fazer os itens quebrarem a linha se necessário */
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    header nav ul li {
+        margin: 0.5rem;
+    }
+
+    header .logo {
+        font-size: 1rem;
+    }
+
+    /* Seção Hero */
+    .hero {
+        height: auto; /* Altura automática para caber o conteúdo */
+        padding: 100px 0 4rem 0; /* Mais padding superior por causa do header fixo */
+        text-align: center;
+    }
+
+    .hero .container {
+        flex-direction: column; /* Empilha o texto e o mascote */
+    }
+
+    .hero-text h1 {
+        font-size: 3rem; /* Reduz o tamanho da fonte do título */
+        animation: none; /* Remove animação para performance em mobile */
+    }
+
+    .hero-text .subtitle {
+        font-size: 1.5rem; /* Reduz o subtítulo */
+        animation: none;
+    }
+
+    .cta-button {
+        animation: none;
+    }
+
+    .hero-mascot {
+        margin-top: 2rem;
+    }
+
+    .hero-mascot img {
+        max-width: 250px; /* Diminui o tamanho do mascote */
+    }
+
+    /* Seções de Conteúdo */
+    .content-section {
+        padding: 4rem 0;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    /* Projetos */
+    .project-card {
+        flex: 0 0 90%; /* Faz o card ocupar quase toda a largura da tela */
+    }
 }
